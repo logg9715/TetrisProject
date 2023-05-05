@@ -1,5 +1,6 @@
 # TetrisProject<br>
-
+사용언어 : C<br>
+개발환경 : VS
 ![image](https://user-images.githubusercontent.com/127168700/236474497-f5d22c2a-efa3-4b86-ba53-d4a3199e5190.png)
 
 
