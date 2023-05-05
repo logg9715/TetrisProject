@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Windows.h>
+#include <conio.h>
 #define sizeY 22
 #define sizeX 12
 
