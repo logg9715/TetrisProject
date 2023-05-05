@@ -69,7 +69,7 @@ int main() {
 		gTime++;
 		printf("%d", gTime);
 
-		Sleep(50);
+		Sleep(10);
 	}
 	return 0;
 }
