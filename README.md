@@ -2,8 +2,7 @@
 사용언어 : C<br>
 개발환경 : VS <br>
 <br>
-![image](https://user-images.githubusercontent.com/127168700/236474497-f5d22c2a-efa3-4b86-ba53-d4a3199e5190.png)
-
+![image](https://user-images.githubusercontent.com/127168700/236600522-91bf8a0c-e3e3-462a-9c8c-fd086d877780.png)
 
 ## 20230505
 대략적인건 완성함.<br>
