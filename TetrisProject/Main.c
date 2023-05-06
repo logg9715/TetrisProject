@@ -299,7 +299,7 @@ int main() {
 	cursorInfo.bVisible = FALSE;
 
 	while (1) {
-		system("cls");
+		//system("cls");
 
 		drawTable();
 		gTime++;
@@ -319,7 +319,7 @@ int main() {
 		drawBlock(myblkPtr);
 		blockFallProcess(myblkPtr);
 
-		Sleep(10);
+		Sleep(30);
 	}
 	return 0;
 }
@@ -330,6 +330,7 @@ void drawTable() {
 	for (i = 0; i < sizeY; i++)
 	{
 		for (k = 0; k < sizeX; k++) {
+			gotoxy(k*2,i);
 			switch (table[i][k])
 			{
 			case 0:
@@ -520,7 +521,6 @@ int removeProcess() {
 	if (line == -1)
 		return 0;
 	
-
 	for (i = line; i > 1; i--) {
 		for (k = 1; k < sizeX - 1; k++)
 			table[i][k] = table[i - 1][k];
@@ -536,34 +536,3 @@ void gameover() {
 	Sleep(100000);
 	exit(0);
 }
-
-// 블럭 화면상에서만 이동 함수 백업 :
-//void drawBlock(int btype, int bState, int x, int y) {
-//	int i, k, initx;
-//	x *= 2;
-//	initx = x;
-//
-//	for (i = 0; i < bsizeY; i++)
-//	{
-//		for (k = 0; k < bsizeX; k++) {
-//			gotoxy(x, y + i);
-//			switch (block[btype][bState][i][k])
-//			{
-//			case 0:
-//				x += 2;
-//				break;
-//			case 1:
-//				printf("■");
-//				x += 2;
-//				break;
-//			case 2:
-//				printf("□");
-//				x += 2;
-//				break;
-//			default:
-//				break;
-//			}
-//		}
-//		x = initx;
-//	}
-//}
