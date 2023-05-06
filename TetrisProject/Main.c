@@ -266,6 +266,7 @@ int bList[7];
 int bTypeQptr;
 int pull = 0;
 int fallspeed;
+int tScore = 0;
 
 void drawTable();
 void drawBlock(blk* myblk);
@@ -277,19 +278,16 @@ void blockinitProcess(blk* myblk);
 void keyProcess(blk* myblk);
 void gameover();
 int removeProcess();
+void printInfo(blk* myblk);
 
 int main() {
-	int i = 0;
 	srand(time(NULL));
+	fallspeed = 6;
 
 	blk myblk;
 	blk* myblkPtr = &myblk;
 	bTypeQptr = 7;
-
 	blockinitProcess(myblkPtr);
-
-
-	fallspeed = 6;
 
 	// 커서 감추기
 	CONSOLE_CURSOR_INFO cursorInfo;
@@ -299,29 +297,34 @@ int main() {
 	cursorInfo.bVisible = FALSE;
 
 	while (1) {
-		//system("cls");
-
 		drawTable();
 		gTime++;
-		printf("time:%d, (%d, %d) %d\n\n", gTime, myblk.x, myblk.y, kbhit());
-		printf("block List : ");
-		for (i = 0; i < 7; i++) {
-			printf("%d ", bList[i]);
-		}
-		printf("\n             ");
-		for (i = 0; i < bTypeQptr; i++) {
-			printf("  ");
-		}
-		printf("=");
-		
 
+		printInfo(myblkPtr);
 		keyProcess(myblkPtr);
 		drawBlock(myblkPtr);
 		blockFallProcess(myblkPtr);
 
 		Sleep(30);
 	}
-	return 0;
+}
+
+void printInfo(blk *myblk) {
+	int i;
+	printf("time:%d, (%d, %d) %d\n\n", gTime, myblk->x, myblk->y, kbhit());
+	printf("block List : ");
+	for (i = 0; i < 7; i++) {
+		printf("%d ", bList[i]);
+	}
+	printf("\n             ");
+	for (i = 0; i < bTypeQptr; i++) {
+		printf("  ");
+	}
+	printf("=");
+	for (i = bTypeQptr; i < 6; i++) {
+		printf("  ");
+	}
+	printf("\nTetris : %d", tScore);
 }
 
 // 테이블 그리기
@@ -358,17 +361,8 @@ void drawBlock(blk* myblk) {
 	{
 		for (k = 0; k < bsizeX; k++) {
 			gotoxy(myblk->x * 2 + k * 2, myblk->y + i);
-			switch (block[myblk->bType][myblk->bState][i][k])
-			{
-			case 1:
+			if (block[myblk->bType][myblk->bState][i][k])
 				printf("■");
-				break;
-			case 2:
-				printf("□");
-				break;
-			default:
-				break;
-			}
 		}
 	}
 }
@@ -391,7 +385,6 @@ void appendProcess(blk* myblk) {
 
 // 블럭 하강
 void blockFallProcess(blk* myblk) {
-
 	if (!(gTime % fallspeed)) {
 		myblk->y = myblk->y + 1;
 		if (checkProcess(myblk)) {
@@ -459,6 +452,7 @@ int checkProcess(blk* myblk) {
 
 // 키 프로세스
 void keyProcess(blk* myblk) {
+	int i;
 	if (kbhit()) {
 		char c;
 		int beforeX = myblk->x;
@@ -477,13 +471,19 @@ void keyProcess(blk* myblk) {
 			break;
 		case 'z':
 			myblk->bState = (myblk->bState + 1) % 4;
-			if (checkProcess(myblk))
-				myblk->x -= 1;
-			if (checkProcess(myblk))
-				myblk->x += 2;
+
 			if (checkProcess(myblk)) {
-				myblk->x -= 1;
-				myblk->y -= 1;
+				for (i = 3; i > -3; i -=2) {
+					myblk->y += i%3;
+					if (!checkProcess(myblk))
+						break;
+					myblk->x -= 1;
+					if (!checkProcess(myblk))
+						break;
+					myblk->x += 2;
+					if (!checkProcess(myblk))
+						break;
+				}
 			}
 			break;
 		case 80:
@@ -527,6 +527,7 @@ int removeProcess() {
 	}
 	for (k = 1; k < sizeX - 1; k++)
 		table[1][k] = 0;
+	tScore++;
 	return removeProcess();
 }
 
