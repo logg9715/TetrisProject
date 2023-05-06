@@ -330,10 +330,10 @@ void printInfo(blk *myblk) {
 // 테이블 그리기
 void drawTable() {
 	int i, k;
+	gotoxy(0,0);
 	for (i = 0; i < sizeY; i++)
 	{
 		for (k = 0; k < sizeX; k++) {
-			gotoxy(k*2,i);
 			switch (table[i][k])
 			{
 			case 0:
