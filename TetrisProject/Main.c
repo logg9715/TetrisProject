@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include <time.h>
 
-#define sizeY 22 // xÁÂÇ¥ÀÇ ºí·° Áß¾Ó »ı¼º ÁÂÇ¥ : x=4, y=1
+#define sizeY 22 // xì¢Œí‘œì˜ ë¸”ëŸ­ ì¤‘ì•™ ìƒì„± ì¢Œí‘œ : x=4, y=1
 #define sizeX 12
 #define bsizeX 4
 #define bsizeY 4
@@ -40,219 +40,219 @@ int table[sizeY][sizeX] = {
 	{2, 2,2,2,2,2,2,2,2,2,2, 2} //21
 };
 
-// block[7Á¾·ù] [4°¡ÁöÈ¸Àü»óÅÂ] [x*4] [y*4]
+// block[7ì¢…ë¥˜] [4ê°€ì§€íšŒì „ìƒíƒœ] [x*4] [y*4]
 int block[7][4][4][4] = {
-	// i ºí·°
+	// i ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{1,1,1,1},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,0,1,0},
 			{0,0,1,0},
 			{0,0,1,0},
 			{0,0,1,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,0,0,0},
 			{1,1,1,1},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{0,1,0,0},
 			{0,1,0,0},
 			{0,1,0,0}
 		},
 	},
-	// ¤± ºí·°
+	// ã… ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,1,1,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,1,1,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,1,1,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,1,1,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 	}	,
-	// T ºí·°
+	// T ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{1,1,1,0},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{0,1,1,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{1,1,1,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{1,1,0,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 	},
-	// L ºí·°
+	// L ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{0,0,1,0},
 			{1,1,1,0},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{0,1,0,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{1,1,1,0},
 			{1,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{1,1,0,0},
 			{0,1,0,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 	},
-	//J ºí·°
+	//J ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{1,0,0,0},
 			{1,1,1,0},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,1,1,0},
 			{0,1,0,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{1,1,1,0},
 			{0,0,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{0,1,0,0},
 			{1,1,0,0},
 			{0,0,0,0}
 		},
 	},
-	//S ºí·°
+	//S ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{0,1,1,0},
 			{1,1,0,0},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{0,1,1,0},
 			{0,0,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{0,1,1,0},
 			{1,1,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{1,0,0,0},
 			{1,1,0,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 	},
-	// Z ºí·°
+	// Z ë¸”ëŸ­
 	{
 		{
-			// 0¹ø»óÅÂ
+			// 0ë²ˆìƒíƒœ
 			{1,1,0,0},
 			{0,1,1,0},
 			{0,0,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 1¹ø»óÅÂ
+			// 1ë²ˆìƒíƒœ
 			{0,0,1,0},
 			{0,1,1,0},
 			{0,1,0,0},
 			{0,0,0,0}
 		},
 		{
-			// 2¹ø»óÅÂ
+			// 2ë²ˆìƒíƒœ
 			{0,0,0,0},
 			{1,1,0,0},
 			{0,1,1,0},
 			{0,0,0,0}
 		},
 		{
-			// 3¹ø»óÅÂ
+			// 3ë²ˆìƒíƒœ
 			{0,1,0,0},
 			{1,1,0,0},
 			{1,0,0,0},
@@ -282,14 +282,14 @@ void printInfo(blk* myblk);
 
 int main() {
 	srand(time(NULL));
-	fallspeed = 6;
+	fallspeed = 10;
 
 	blk myblk;
 	blk* myblkPtr = &myblk;
 	bTypeQptr = 7;
 	blockinitProcess(myblkPtr);
 
-	// Ä¿¼­ °¨Ãß±â
+	// ì»¤ì„œ ê°ì¶”ê¸°
 	CONSOLE_CURSOR_INFO cursorInfo;
 	cursorInfo.bVisible = 0;
 	cursorInfo.dwSize = 1;
@@ -309,7 +309,7 @@ int main() {
 	}
 }
 
-void printInfo(blk *myblk) {
+void printInfo(blk* myblk) {
 	int i;
 	printf("time:%d, (%d, %d) %d\n\n", gTime, myblk->x, myblk->y, kbhit());
 	printf("block List : ");
@@ -325,12 +325,13 @@ void printInfo(blk *myblk) {
 		printf("  ");
 	}
 	printf("\nTetris : %d", tScore);
+	printf("\n %d", myblk->bState);
 }
 
-// Å×ÀÌºí ±×¸®±â
+// í…Œì´ë¸” ê·¸ë¦¬ê¸°
 void drawTable() {
 	int i, k;
-	gotoxy(0,0);
+	gotoxy(0, 0);
 	for (i = 0; i < sizeY; i++)
 	{
 		for (k = 0; k < sizeX; k++) {
@@ -340,10 +341,10 @@ void drawTable() {
 				printf("  ");
 				break;
 			case 1:
-				printf("¡á");
+				printf("â– ");
 				break;
 			case 2:
-				printf("¡à");
+				printf("â–¡");
 				break;
 			default:
 				break;
@@ -353,7 +354,7 @@ void drawTable() {
 	}
 }
 
-// ºí·° ÀÌµ¿(È­¸é»ó¿¡¸¸ Ç¥½Ã)
+// ë¸”ëŸ­ ì´ë™(í™”ë©´ìƒì—ë§Œ í‘œì‹œ)
 void drawBlock(blk* myblk) {
 	int i, k;
 
@@ -362,13 +363,13 @@ void drawBlock(blk* myblk) {
 		for (k = 0; k < bsizeX; k++) {
 			gotoxy(myblk->x * 2 + k * 2, myblk->y + i);
 			if (block[myblk->bType][myblk->bState][i][k])
-				printf("¡á");
+				printf("â– ");
 		}
 	}
 }
 
 
-// ºí·°À» Å×ÀÌºí¿¡ ÀúÀå
+// ë¸”ëŸ­ì„ í…Œì´ë¸”ì— ì €ì¥
 void appendProcess(blk* myblk) {
 	int i, k;
 
@@ -383,7 +384,7 @@ void appendProcess(blk* myblk) {
 	blockinitProcess(myblk);
 }
 
-// ºí·° ÇÏ°­
+// ë¸”ëŸ­ í•˜ê°•
 void blockFallProcess(blk* myblk) {
 	if (!(gTime % fallspeed)) {
 		myblk->y = myblk->y + 1;
@@ -399,7 +400,7 @@ void blockFallProcess(blk* myblk) {
 
 }
 
-// ºí·° ÃÊ±âÈ­ ÇÁ·Î¼¼½º
+// ë¸”ëŸ­ ì´ˆê¸°í™” í”„ë¡œì„¸ìŠ¤
 void blockinitProcess(blk* myblk) {
 	int i, k;
 
@@ -428,15 +429,15 @@ void blockinitProcess(blk* myblk) {
 		gameover();
 }
 
-// Ä¿¼­ ÀÌµ¿
+// ì»¤ì„œ ì´ë™
 void gotoxy(int x, int y) {
-	//x, y ÁÂÇ¥ ¼³Á¤
+	//x, y ì¢Œí‘œ ì„¤ì •
 	COORD pos = { x,y };
-	//Ä¿¼­ ÀÌµ¿
+	//ì»¤ì„œ ì´ë™
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-// ºí·°ÀÇ Ãæµ¹¿©ºÎ È®ÀÎ
+// ë¸”ëŸ­ì˜ ì¶©ëŒì—¬ë¶€ í™•ì¸
 int checkProcess(blk* myblk) {
 	int i, k;
 
@@ -450,7 +451,7 @@ int checkProcess(blk* myblk) {
 	return 0;
 }
 
-// Å° ÇÁ·Î¼¼½º
+// í‚¤ í”„ë¡œì„¸ìŠ¤
 void keyProcess(blk* myblk) {
 	int i;
 	if (kbhit()) {
@@ -469,12 +470,30 @@ void keyProcess(blk* myblk) {
 		case 75:
 			myblk->x -= 1;
 			break;
-		case 'z':
+		case 'x':
 			myblk->bState = (myblk->bState + 1) % 4;
-			// ºó °ø°£ Ã£¾Æ¼­ µé¾î°¡±â
+			// ë¹ˆ ê³µê°„ ì°¾ì•„ì„œ ë“¤ì–´ê°€ê¸°
 			if (checkProcess(myblk)) {
-				for (i = 3; i > -3; i -=2) {
-					myblk->y += i%3;
+				for (i = 3; i > -3; i -= 2) {
+					myblk->y += i % 3;
+					if (!checkProcess(myblk))
+						break;
+					myblk->x -= 1;
+					if (!checkProcess(myblk))
+						break;
+					myblk->x += 2;
+					if (!checkProcess(myblk))
+						break;
+				}
+			}
+			break;
+		case 'z':
+			myblk->bState = myblk->bState - 1 >= 0 ? (myblk->bState - 1) : 3;
+			
+			// ë¹ˆ ê³µê°„ ì°¾ì•„ì„œ ë“¤ì–´ê°€ê¸°
+			if (checkProcess(myblk)) {
+				for (i = 3; i > -3; i -= 2) {
+					myblk->y += i % 3;
 					if (!checkProcess(myblk))
 						break;
 					myblk->x -= 1;
@@ -500,11 +519,11 @@ void keyProcess(blk* myblk) {
 		}
 	}
 	else {
-		fallspeed = 6;
+		fallspeed = 10;
 	}
 }
 
-// ºí·° Á¦°Å ÇÁ·Î¼¼½º
+// ë¸”ëŸ­ ì œê±° í”„ë¡œì„¸ìŠ¤
 int removeProcess() {
 	int i, k, line = -1;
 	for (i = 1; i < sizeY - 1; i++)
@@ -520,7 +539,7 @@ int removeProcess() {
 	}
 	if (line == -1)
 		return 0;
-	
+
 	for (i = line; i > 1; i--) {
 		for (k = 1; k < sizeX - 1; k++)
 			table[i][k] = table[i - 1][k];
@@ -533,7 +552,7 @@ int removeProcess() {
 
 void gameover() {
 	gotoxy(0, 10);
-	printf("¡à      GameOver      ¡à");
+	printf("â–¡      GameOver      â–¡");
 	Sleep(100000);
 	exit(0);
 }
