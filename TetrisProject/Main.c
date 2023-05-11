@@ -470,7 +470,7 @@ void keyProcess(blk* myblk) {
 		case 75:
 			myblk->x -= 1;
 			break;
-		case 'z':
+		case 'x':
 			myblk->bState = (myblk->bState + 1) % 4;
 			// 빈 공간 찾아서 들어가기
 			if (checkProcess(myblk)) {
@@ -487,7 +487,7 @@ void keyProcess(blk* myblk) {
 				}
 			}
 			break;
-		case 'x':
+		case 'z':
 			myblk->bState = myblk->bState - 1 >= 0 ? (myblk->bState - 1) : 3;
 			
 			// 빈 공간 찾아서 들어가기
